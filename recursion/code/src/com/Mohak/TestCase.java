@@ -5,30 +5,13 @@ import java.util.Arrays;
 public class TestCase {
     public static void main(String[] args) {
 //        System.out.println(5 ^ 1);
-        int[][] arr = {{1, 1, 0}, {1, 0, 1}, {0, 0, 0}};
-        System.out.println(flipAndInvertImage(arr));
-        System.out.println(Arrays.toString(arr));
-    }
-
-    static int[][] flipAndInvertImage(int[][] image) {
-        for (int[] row : image){
-            for (int i = 0; i<(image[0].length+1)/2; i++){
-                swap(row, i, image[0].length - i - 1);
-            }
-
+        int n = 14;
+        int count = 0;
+        while (n>0){
+            n = n>>1;
+            count++;
         }
-        for (int i = 0; i<image.length; i++){
-            for (int j = 0; j < image[0].length; j++) {
-                image[i][j] ^= 1;
-            }
-        }
-        return image;
-
-    }
-    static void swap(int[] arr, int a, int b){
-        int temp = arr[a];
-        arr[a] = arr[b];
-        arr[b] = temp;
+        System.out.println(count);
     }
 
 
